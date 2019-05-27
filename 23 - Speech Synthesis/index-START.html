@@ -68,6 +68,7 @@
   voicesDropdown.addEventListener('change', setVoice);
   options.forEach(option => option.addEventListener('change', setOption));
   speakButton.addEventListener('click', toggle);
+  // All of following options will stop, but bind is recommended since it doesn't create a new function
   //stopButton.addEventListener('click', function() { toggle(false) });
   stopButton.addEventListener('click', toggle.bind(null, false));
   //stopButton.addEventListener('click', () => toggle(false));
