@@ -42,6 +42,28 @@
 
 <button></button>
 <script>
+  const divs = document.querySelectorAll('div');
+  const button = document.querySelector('button');
+
+  function logText(e) {
+    console.log(this.classList.value);
+    //e.stopPropagation(); // stop bubbling
+    //console.log(this);
+  }
+
+  //document.body.addEventListener('click', logText);
+
+  //capture is set to false unless set otherwise
+  divs.forEach(div => div.addEventListener('click', logText, {
+    capture: false,
+    once: true
+  }));
+  //use one if you only want a user to click a button ONE time (such as a 'buy now' button)
+  button.addEventListener('click', () => {
+    console.log('Click!!!');
+  }, {
+    once: true
+  });
 
 </script>
 </body>
